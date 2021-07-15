@@ -1,0 +1,14 @@
+.blockInput, .blockSelectCountry, .blockSex, .blockAccept, .signUpButton{
+    padding: 2%
+}
+
+.messageError{
+    color: red
+}
+
+select:required:invalid {
+    color: gray;
+  }
+  option {
+    color: black;
+  }
