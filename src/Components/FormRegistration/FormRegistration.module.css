@@ -1,9 +1,60 @@
-.blockInput, .blockSelectCountry, .blockSex, .blockAccept, .signUpButton{
+h1 {
+    padding-top: 5%;
+}
+
+.blockInputName, .blockInputEmail, .blockInputPassword, .blockSelectCountry, .blockSex, .blockAccept, .signUpButton{
     padding: 2%
 }
 
+.blockError{
+  height: 10px;
+  text-align: left;
+  margin-left: 10%;
+}
+
 .messageError{
-    color: red
+    font-size: x-small;
+    color: red;
+}
+
+.inputName, .inputEmail, .inputPassword {
+    background-color:rgb(240, 240, 240) ;
+    border:solid 1px rgb(240, 240, 240);
+    border-radius: 10px;
+    height: 50px;
+    width: 80%;
+}
+
+.inputName:focus, .inputEmail:focus, .inputPassword, select:focus{
+    outline: none;
+}
+
+.inputEmail{
+  background-image: url('./emailIcon.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  text-indent: 30px;
+  background-position: center left 1%;
+}
+
+.inputPassword{
+  background-image: url('./lockIcon.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  text-indent: 30px;
+  background-position: center left 1%;
+}
+
+select {
+    width: 80%;
+    height: 50px;
+    background-color:rgb(240, 240, 240) ;
+    border:solid 1px rgb(240, 240, 240);
+    border-radius: 10px;
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 15 15"><path d="M 8,5.5 11,9.5 14,5.5 z"></path></svg>');   
+    background-repeat: no-repeat;
+    background-position: center right;
 }
 
 select:required:invalid {
@@ -12,3 +63,88 @@ select:required:invalid {
   option {
     color: black;
   }
+
+  .blockSelectSex, .blockSelectAccept{
+    text-align: left;
+    margin-left: 10%;
+  }
+
+  .radio_item, .checkbox_item {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .radio_item+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    margin-right: 10px;
+  }
+
+  .radio_item+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid blue;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+
+  .radio_item:checked+label::before {
+    border-color: blue;
+    background-color: blue;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  }
+
+  .checkbox_item+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+  .checkbox_item+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid blue;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+
+  .checkbox_item:checked+label::before {
+    border-color: blue;
+    background-color: blue;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+  }
+
+  .signUpButton button:enabled{
+      color: white;
+      background-color: rgb(69, 200, 209);
+      border-radius: 20px;
+      width: 80%;
+      height: 50px;
+  }
+
+  .signUpButton button:disabled{
+    color: white;
+    background-color: gray;
+    border-radius: 20px;
+    width: 80%;
+    height: 50px;
+}
+
+.signUpButton img{
+  width: 10%;
+}
