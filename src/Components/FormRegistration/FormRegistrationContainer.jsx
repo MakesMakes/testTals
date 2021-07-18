@@ -5,28 +5,26 @@ import FormRegistration from './FormRegistration'
 class FormRegistrationContainer extends React.Component {
 
     state = {
-        signUpMode: false
+        signUpSpinner: false
     }
 
-    activateSignUpMode = () => {
+    activateSignUpSpinner = () => {
         this.setState({
-            signUpMode: true
+            signUpSpinner: true
         })
     }
 
-     deActivateSignUpMode = () => {
-        
+    deActivateSignUpSpinner = () => {
         this.setState({
-            signUpMode: false
+            signUpSpinner: false
         })
     }
 
     render() {
         return (
             <div>
-                <FormRegistration signUpMode={this.state.signUpMode} activateSignUpMode={this.activateSignUpMode} deActivateSignUpMode = {this.deActivateSignUpMode}/>
+                <FormRegistration signUpSpinner={this.state.signUpSpinner} activateSignUpSpinner={this.activateSignUpSpinner} deActivateSignUpSpinner={this.deActivateSignUpSpinner} />
             </div>
-
         )
     }
 }

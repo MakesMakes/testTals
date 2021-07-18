@@ -1,20 +1,21 @@
 import React from 'react'
 import style from './FormRegistration.module.css'
 import { useForm } from 'react-hook-form'
-import loader from './loader.gif'
+import loader from './../../icons/loader.gif'
 
 const FormRegistration = (props) => {
 
     const { register, handleSubmit, formState: { errors, isDirty, isValid } } = useForm({ mode: "onChange" });
 
     const onSubmit = (data) => {
-        props.activateSignUpMode()
-        setTimeout(props.deActivateSignUpMode, 10000)
+        props.activateSignUpSpinner()
+        setTimeout(props.deActivateSignUpSpinner, 10000)
         console.log(data);
     }
 
     return (
         <div className={style.moduleSignUp}>
+
             <h1>Create a new account</h1>
 
             <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
@@ -80,10 +81,10 @@ const FormRegistration = (props) => {
                 </div>
 
                 <div className={style.signUpButton}>
-                    {!props.signUpMode &&
+                    {!props.signUpSpinner &&
                         <button disabled={!isDirty || !isValid}>Sign up</button>
                     }
-                    {props.signUpMode &&
+                    {props.signUpSpinner &&
                         <button disabled>
                             <img src={loader} alt="" />
                         </button>
